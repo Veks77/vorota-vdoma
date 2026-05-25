@@ -30,7 +30,7 @@ export function Services() {
             Наші послуги
           </div>
           <h2 className="text-3xl sm:text-5xl font-bold text-balance">
-            Повний цикл — від замиру до сервісу
+            Повний цикл — від заміру до сервісу
           </h2>
           <p className="mt-4 text-muted-foreground text-lg">
             Працюємо з приватними будинками, бізнесом та промисловими об’єктами.
@@ -45,15 +45,15 @@ export function Services() {
             >
               <div className="absolute -right-10 -top-10 size-40 rounded-full bg-ember/0 group-hover:bg-ember/10 blur-3xl transition-all duration-500" />
               <div className="relative">
-                <div className="size-12 rounded-xl bg-graphite text-ember grid place-items-center mb-5 group-hover:gradient-ember group-hover:text-graphite transition">
-                  <Icon className="size-6" />
+                <div className="service-icon size-12 rounded-xl bg-graphite text-ember grid place-items-center mb-5 group-hover:gradient-ember group-hover:text-graphite transition">
+                  <Icon className="service-icon-svg size-6" />
                 </div>
                 <h3 className="font-semibold text-lg">{title}</h3>
                 <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{desc}</p>
-                <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-foreground/80 group-hover:text-ember transition">
+                <a href="#process" className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-foreground/80 group-hover:text-ember transition">
                   Дізнатись більше
                   <ArrowUpRight className="size-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
-                </div>
+                </a>
               </div>
             </div>
           ))}

@@ -134,4 +134,40 @@
     backdrop-filter: blur(12px);
     border: 1px solid oklch(1 0 0 / 0.1);
   }
+  .service-icon {
+    position: relative;
+    isolation: isolate;
+  }
+  .service-icon::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(circle, oklch(0.78 0.17 60 / 0.34), transparent 68%);
+    opacity: 0;
+    transform: scale(0.6) rotate(-12deg);
+    transition: opacity 300ms ease, transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .service-icon:hover {
+    box-shadow: 0 18px 32px -16px oklch(0.72 0.19 50 / 0.75);
+  }
+  .service-icon:hover::after {
+    opacity: 1;
+    transform: scale(1) rotate(8deg);
+  }
+  .service-icon-svg {
+    transform-origin: 50% 56%;
+    transition: transform 420ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 300ms ease;
+  }
+  .service-icon:hover .service-icon-svg {
+    animation: service-icon-pop 620ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    filter: drop-shadow(0 8px 10px oklch(0.18 0.01 260 / 0.22));
+  }
+  @keyframes service-icon-pop {
+    0% { transform: translateY(0) rotate(0deg) scale(1); }
+    38% { transform: translateY(-5px) rotate(-10deg) scale(1.16); }
+    68% { transform: translateY(1px) rotate(7deg) scale(0.96); }
+    100% { transform: translateY(-2px) rotate(0deg) scale(1.08); }
+  }
 }
